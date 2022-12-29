@@ -1,10 +1,22 @@
-import { FunctionComponent } from 'react';
-import Popup from 'react-popup';
+import { FunctionComponent, useState } from 'react';
+import Modal from 'react-modal';
 import Link from 'next/link';
 
 const CalendarView: FunctionComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalDay, setModalDay] = useState(0);
+  const [modalHour, setModalHour] = useState(0);
+
   return (
     <div>
+      <Modal
+        isOpen={isModalOpen}
+        contentLabel="Date and time"
+        onRequestClose={() => setIsModalOpen(false)}
+      >
+        <p>Date: {modalDay}</p>
+        <p>Hour: {modalHour}</p>
+      </Modal>
       <div className="grid grid-cols-7 grid-rows-12">
         {/* Render cells for each day and hour */}
         {[...Array(7 * 12)].map((_, index) => {
@@ -16,21 +28,17 @@ const CalendarView: FunctionComponent = () => {
               key={index}
               className="border border-gray-300"
               onClick={() => {
-                // Show a pop-up with the date and time when the cell is clicked
-                Popup.create({
-                  content: `Date: ${day} Hour: ${hour}`,
-                  buttons: {
-                    right: [{
-                      text: 'Close',
-                      action: Popup.close
-                    }]
-                  }
-                });
+                // Open the modal and set the date and time when the cell is clicked
+                setModalDay(day);
+                setModalHour(hour);
+                setIsModalOpen(true);
               }}
             />
           );
         })}
       </div>
+      {/* Add a button to open the modal */}
+      <button onClick={() => setIsModalOpen(true)}>Open modal</button>
       {/* Add links to navigate between different views of the calendar */}
       <div className="mt-4">
         <Link href="/calendar/month">
