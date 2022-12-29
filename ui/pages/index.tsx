@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       <div>
            <Link href="/calendar">
-        <a>Calendar</a>
+        Calendar
       </Link>
       </div>
         <div className={styles.center}>

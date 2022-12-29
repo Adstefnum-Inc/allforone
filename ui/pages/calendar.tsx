@@ -1,3 +1,3 @@
-import CalendarView from './CalendarView';
+import CalendarView from '../components/CalendarView';
 
 export default CalendarView;
