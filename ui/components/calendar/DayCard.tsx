@@ -2,7 +2,7 @@ import { isSameDay, format } from "date-fns";
 import React from "react";
 import Event from "./Event";
 
-const DayCard = ({ date, events }) => {
+const DayCard = ({ date, events }: { date: Date, events: Event[] }) => {
   // Styling for bullet point
 
     //Extracts month in long format from date object
@@ -19,7 +19,7 @@ const DayCard = ({ date, events }) => {
 
   // Sort events by startAt property
   let sortedEvents = [...events].sort(
-    (a, b) => new Date(a.startAt) - new Date(b.startAt)
+    (a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime()
   );
 
   return (
