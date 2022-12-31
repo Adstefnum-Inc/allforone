@@ -2,7 +2,7 @@ import { isSameDay, format } from "date-fns";
 import React from "react";
 import Event from "./Event";
 
-const DayCard = ({ date, events }: { date: Date, events: Event[] }) => {
+const DayCard = ({ date, events }) => {
   // Styling for bullet point
 
     //Extracts month in long format from date object

@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/calendar/Event.jsx", "components/calendar/DayCard.jsx", "components/calendar/DayCardList.jsx", "components/calendar/MonthAndYear.jsx", "contexts/Context.js", "services/dataService.js", "components/calendar/Calendar.jsx", "utilities/calendar.js"],
   "exclude": ["node_modules"]
 }
