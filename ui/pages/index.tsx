@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <NavBar></NavBar>
+        <NavBar/>
       <div>
            <Link href="/calendar">
         Calendar
