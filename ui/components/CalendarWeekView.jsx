@@ -5,11 +5,18 @@ function CalendarWeekView() {
   const [events, setEvents] = useState([]); // array of event objects
 
   function handlePrevClick() {
+
+    if(currentWeek!=1){
+
     setCurrentWeek(currentWeek - 1);
+    }
   }
 
   function handleNextClick() {
+    if(currentWeek!=52){
+
     setCurrentWeek(currentWeek + 1);
+    }
   }
 
   function renderCalendar() {
