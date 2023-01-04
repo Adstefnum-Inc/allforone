@@ -61,8 +61,8 @@ function CalendarWeekView() {
   }
 
   function handleEventClick(event) {
-    // open the modal with the event details
-  }
+alert("modal clicked")  
+}
 
   return (
     <div>
