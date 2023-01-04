@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import Link from 'next/link';
-import NavBar from '../components/NavBar';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const inter = Inter({ subsets: ['latin'] })
 
