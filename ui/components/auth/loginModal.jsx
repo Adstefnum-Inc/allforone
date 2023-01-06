@@ -78,7 +78,7 @@ function LoginModal() {
           </button>
         </div>
         <div className="text-center mt-4 text-gray-500">
-          <a href="/api/auth/signup" className="text-blue-500 hover:text-blue-800">Create an account</a>
+          <a href="/auth/signup" className="text-blue-500 hover:text-blue-800">Create an account</a>
         </div>
       </form>
     </div>
