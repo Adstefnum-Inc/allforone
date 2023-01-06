@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import * as firebase from 'firebase/app';
 
 function LoginModal() {
   const [email, setEmail] = useState('');
@@ -79,7 +78,7 @@ function LoginModal() {
           </button>
         </div>
         <div className="text-center mt-4 text-gray-500">
-          <a href="#" className="text-blue-500 hover:text-blue-800">Create an account</a>
+          <a href="/api/auth/signup" className="text-blue-500 hover:text-blue-800">Create an account</a>
         </div>
       </form>
     </div>

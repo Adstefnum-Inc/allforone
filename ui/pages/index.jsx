@@ -34,7 +34,7 @@ export default function Home() {
            <Link href="/calendar">
         Calendar
       </Link>
-       <Link href="/login">
+       <Link href="/api/auth/login">
         Login
       </Link>
       </div> 
