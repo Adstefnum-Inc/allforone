@@ -1,3 +1,3 @@
-import SignUpModal from "../../../components/auth/SignUpModal";
+import SignUpModal from "../../components/auth/SignUpModal";
 
 export default SignUpModal;
