@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import * as firebase from 'firebase/app';
 
+import { auth } from '../../utils/firebase.js';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from 'react';
+
+// const auth = getAuth();
 function LoginModal() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,18 +17,29 @@ function LoginModal() {
   };
 
   const handleLogin = () => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(() => {
-        // The user is signed in.
-      })
-      .catch((error) => {
-        // An error occurred.
-      });
+    // auth().signInWithEmailAndPassword(email, password)
+    //   .then(() => {
+    //     // The user is signed in.
+    //   })
+    //   .catch((error) => {
+    //     // An error occurred.
+    //   });
+
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
   };
 
   const handleGoogleLogin = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
+    const provider = new auth.GoogleAuthProvider();
+    auth().signInWithPopup(provider)
       .then(() => {
         // The user is signed in.
       })

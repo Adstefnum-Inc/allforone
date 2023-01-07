@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import * as firebase from 'firebase/app';
-
+import { auth } from '../../utils/firebase.js';
 function SignupModal() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +13,7 @@ function SignupModal() {
   };
 
   const handleSignup = () => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
         // The user is signed up.
       })

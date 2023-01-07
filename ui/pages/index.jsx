@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import Link from 'next/link';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
-const inter = Inter({ subsets: ['latin'] })
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
 
 const firebaseConfig = ({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,10 +15,11 @@ const firebaseConfig = ({
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
-const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+export const app = initializeApp(firebaseConfig);
 
+export const auth = getAuth(app);
 
+const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
