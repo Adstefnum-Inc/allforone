@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { auth } from '../../utils/firebase.js';
+import { auth } from '../../firebase';
 function SignupModal() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

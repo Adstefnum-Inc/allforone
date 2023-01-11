@@ -1,9 +1,9 @@
 
-import { auth } from '../../utils/firebase.js';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
 
-// const auth = getAuth();
+
 function LoginModal() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,13 +17,7 @@ function LoginModal() {
   };
 
   const handleLogin = () => {
-    // auth().signInWithEmailAndPassword(email, password)
-    //   .then(() => {
-    //     // The user is signed in.
-    //   })
-    //   .catch((error) => {
-    //     // An error occurred.
-    //   });
+   
 
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
